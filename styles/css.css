@@ -1,0 +1,439 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    background-color: rgba(243, 199, 199, 0.863); 
+    font-family: 'Josefin Sans', sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .menu {
+    left: 0;
+}
+
+.checkbtn {
+    color: black;
+    line-height: 80px;
+    left: 10px;
+    top: 7px;
+    cursor: pointer;
+    position: absolute;
+}
+
+.menu a {
+    color: black;
+    text-decoration: none;
+}
+
+
+.menu { /* REVISAR! */
+
+    position: absolute;
+    width: 100%;
+    height: 50vw;
+    background: rgb(243, 199, 199, 0.863);
+    top: 80px;
+    list-style: none;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-radius: 40px;
+    border: 1px solid;
+    padding: 10px 0;
+    z-index: 20;
+}
+
+.menu a:hover ~ .submenu {
+    display: block;
+}
+
+.submenu { /* revisar */
+    list-style: none;
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    align-content: center;
+    line-height: 2;
+    transform: translateY(-10px);
+    padding-top: .5rem;
+}
+
+/* .submenu li>a {
+    background: rgba(243, 199, 199, 0.911);
+    padding: 5px 8px;
+    border-radius: 10px;
+
+} */
+
+.iconos {
+    position: fixed;
+    right: 0;
+    padding: 10px;
+    transform: translateY(71px);
+    z-index: 10;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    background-color: rgba(243, 199, 199, 0.863);
+}
+
+.titulo {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.spans {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-25px);
+}
+
+.parallax { /* revisar */ /* crear parallax */
+    background-image: url(./../Fotos/fondo2.jpeg);
+    height: 100rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    background-color: white;
+}
+
+.carousel {
+    margin: 50px 0;
+}
+
+
+.divButton {
+    margin-top: 100px;
+    width: 70%;
+}
+
+.button {
+    color: black;
+    background-color: rgba(243, 199, 199, 0.863);
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+.col {
+    margin: 10px;
+}
+
+.col img {
+    height: 100%;
+}
+
+
+.footer {
+    padding-left: 20px;
+    list-style-type: disc;
+    line-height: 1.9;
+    margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (min-width: 768px) {
+    .col {
+        margin: 10px;
+    }
+
+
+    .row {
+        width: 85%;
+        transform: translateX(108px);
+    }
+
+    .col img {
+        height: 100%;
+    }
+
+    .checkbtn {
+        display: none;
+    }
+
+    #header {
+        height: 100px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+
+    }
+
+    .parallax {
+        background-image: url(../Fotos/fondo.jpeg);
+        height: 600px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .navBar {
+        position: absolute;
+        top: 55px;
+        width: 800px;
+        /* width: 100%; */    
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .menu {
+        color: black;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between; 
+        background: none;
+        left: 0;
+        top: 0;
+        line-height: 1;     
+        border: none;
+    }
+
+    .menu > li > a {
+        display: block;
+        padding: 15px 20px;
+    }
+
+
+    /* .menu li:hover {
+        transform: scale(1.1);
+        transition: .5s;
+    } */
+
+    .submenu {
+        position: absolute;
+        width: 150px;
+        display: none;
+        line-height: 1.7;
+        border-radius: 20px;
+        text-align: start;
+        padding-left: 20px;
+    }
+
+    .submenu li>a {
+        background: rgba(243, 199, 199, 0.911);
+        padding: 5px 8px;
+        border-radius: 10px;
+
+    }
+    
+    .menu li a:hover .submenu {
+        display: block;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .titulo {
+        width: 700px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+    }
+
+    .spans {
+        width: 500px;
+        transform: translateY(-40px);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .iconos {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        transform: translateY(0);
+        position: fixed;
+        right: 0;
+        z-index: 20;
+    }
+
+    .logo:hover:hover {
+        transform: scale(1.1);
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 30%;
+        background-color: rgba(243, 199, 199, 0.863);
+    }
+
+    .grande {
+        padding-top: 100px;
+        height: 400px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .divButton {
+        width: 30%;
+        padding: 100px 0;
+    }
+    
+    .button {
+        color: black;
+        background-color: rgba(243, 199, 199, 0.863);
+        font-size: 20px;
+        border: 1px solid black;
+    }
+
+    .footer {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 20px;
+    }
+
+    .footer li {
+        list-style: disc;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
