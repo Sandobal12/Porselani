@@ -12,38 +12,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,300;1,400&family=Nunito:ital,wght@1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <title>Porcelani4</title>
+    <title>Porselani</title>
 </head>
 <body>
     <header id="header">
-        <!-- Menu navbar -->
-        <nav class="navBar header">
-            <input type="checkbox" id="check" class="check">
-            <label for="check" class="checkbtn">
-                <span class="material-symbols-outlined">menu</span>
-            </label>
-            <ul class="menu">
-                <li><a href="./pages/todo.html">Todo</a></li>
-                <li class="accesorios"><a href="./pages/accesorios.html">Acceosorios</a>
-                    <ul class="submenu">
-                        <li><a href="./pages/caravanas.html">Caravanas</a></li>
-                        <li><a href="./pages/cabello.html">Cabello</a></li>
-                    </ul>
-                </li>
-                <li class="arte"><a href="./pages/arte.html">Arte</a>
-                    <ul class="submenu2">
-                        <li><a href="./pages/apoyapinceles.html">Apoya Pinceles</a></li>
-                        <li><a href="./pages/paletas.html">Paletas</a></li>
-                    </ul>
-                </li>
-                <li><a href="./pages/cocina.html">Cocina</a></li>
-            </ul>
-        </nav>
-        <!-- Fin menu navbar -->
-
+        
         <!-- Titulo e iconos -->
         <Section class="titulo header">
-             <h2>Porcelani4</h2>
+             <h2>Porselani</h2>
              <div class="spans">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
@@ -51,10 +27,11 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                 </svg>
-             </div>
+            </div>
         </Section>
         <!-- Fin Titulo e iconos -->
-
+        
+        
         <!-- iconos contacto -->
         <section class="iconos header">
             <a href="https://wa.link/3xmto9" class="iconWapp" target="_blank"><img src="./fotos/logoWapp2.png" alt="logoWapp" class="logo"></a>
@@ -62,11 +39,51 @@
         </section>
         <!-- Fin iconos contacto -->
     </header>
+    
+    <!-- Menu navbar -->
+    <nav class="navbar">
+        <input type="checkbox" id="check" class="check">
+        <label for="check" class="checkbtn">
+            <span class="material-symbols-outlined">menu</span>
+        </label>
+        <div class="menu">
+            <div class="todo pages">
+                <h6><a href="./pages/todo.html">Todo</a></h6>
+            </div>
+            <div class="dropdown">
+                <button class="dropdowns">
+                    <h6><a href="./pages/accesorios.html">Accesorios</a></h6> <img src="./fotos/caret-down.svg" alt="#" style="width: 18px;">
+                </button>
+                <div>
+                    <div class="submenu">
+                        <h6><a href="./pages/caravanas.html">Caravanas</a></h6>
+                        <h6><a href="./pages/cabello.html">Cabello</a></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropdowns">
+                    <h6><a href="./pages/arte.html">Arte</a></h6> <img src="./fotos/caret-down.svg" alt="#" style="width: 18px;">
+                </button>
+                <div>
+                    <div class="submenu">
+                        <h6><a href="./pages/apoyaPinceles.html">Apoya Pinceles</a></h6>
+                        <h6><a href="./pages/paletas.html">Paletas</a></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="cocina pages">
+                <h6><a href="./pages/cocina.html">Cocina</a></h6>
+            </div>
+        </div>
+    </nav>
+    <!-- Fin menu navbar -->
 
-    <section class="parallax"> 
+    <!-- <section class="parallax"> 
         
-    </section>
-
+    </section> -->
+    
+    
     <!-- carrousel -->    
     
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -154,9 +171,6 @@
     </footer>
 
 
-
-
-BORRAR
 
 
 

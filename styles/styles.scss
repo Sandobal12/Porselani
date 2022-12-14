@@ -6,6 +6,7 @@
 * {
     margin: 0;
     padding: 0;
+
     box-sizing: border-box;
 }
 
@@ -13,7 +14,7 @@ body {
     background-color: $backgroundRosa; 
     font-family: 'Josefin Sans', sans-serif;
     text-decoration: none;
-    color: black;
+    color: $black;
 }
 
 #header {
@@ -48,68 +49,21 @@ body {
 
 
 
-.menu { /* REVISAR! */
-
-    position: map-get($maps, position);
-    @include ancho(100%);
-    height: 50vw;
-    background: $backgroundRosa;
-    top: 80px;
-    list-style: none;
-    left: -100%;
-    text-align: center;
-    transition: all .5s;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-radius: 40px;
-    border: 1px solid;
-    padding: 10px 0;
-    z-index: 20;
-    
-    a:hover ~ .submenu {
-        display: map-get($maps, display);
-    }
-    a {
-        color: $black;
-        text-decoration: none;
-    }
-}
-
-
-
-.submenu { /* revisar */
-    list-style: none;
-    display: none;
-    position: map-get($maps, position);
-    @include ancho(100%);
-    @include alto(80px);
-    text-align: center;
-    align-content: center;
-    line-height: 2;
-    transform: translateY(-10px);
-    padding-top: .5rem;
-}
-
-.submenu2 {
-    @extend .submenu;
-}
-
 .iconos {
     position: fixed;
     right: 0;
     padding: 10px;
     transform: translateY(71px);
     z-index: 10;
+    
 }
 
 .logo {
     @include ancho(40px);
     @include alto(40px);
     border-radius: 30%;
-    background-color: $backgroundRosa;
+    background: $backgroundRosa;
+    border: 1px solid $black;
 }
 
 .titulo {
@@ -272,66 +226,87 @@ body {
         @include alto(600px);
         background-repeat: no-repeat;
         background-size: cover;
-        background-position: center
+        background-position: center;
     }
 
     li {
         list-style: none;
     }
 
-    .navBar {
-        position: map-get($maps, position);
-        top: 55px;
-        @include ancho(800px);
-        display: flex;
-        justify-content: space-between;
+    .navbar {
+        width: 70%;
+        left: 15%;
+        color: $black;
     }
 
     .menu {
-        color: black;
-        @include alto(200px);
+        width: 100%;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between; 
-        background: none;
-        left: 0;
-        top: 0;
-        line-height: 1;     
-        border: none;
-    }
-
-    .menu > li > a {
-        display: map-get($maps, display);
-        padding: 15px 20px;
-    }
-
-
-    .submenu {
-        position: map-get($maps, position);
-        @include ancho(150px);
-        display: none;
-        line-height: 1.7;
-        border-radius: 20px;
-        text-align: start;
-        padding-left: 20px;
+        justify-content: space-around;
+        text-decoration: none;
 
         a {
-            background-color: rgba(243, 199, 199, 0.911);
-            padding: 5px 8px;
-            border-radius: 10px;
+            text-decoration: none;
+            color: $black;
+
         }
     }
-    
-    
-    .menu li a:hover .submenu {
-        display: map-get($maps, display);
+
+    .pages {
+        border-bottom: 1px solid $charcoal;
+        border-radius: 4px;
+        border-left: 1px solid $charcoal;
+        padding-left: 10px;
     }
 
-    a {
-        text-decoration: none;
-        color: black;
+    .pages:hover {
+        transform: scale(1.1);
     }
 
+    .dropdowns {
+        border: none;
+        border-bottom: 1px solid $charcoal;
+        border-left: 1px solid $charcoal;
+        border-top: 0.1px solid $charcoal;
+        border-radius: 4px;
+        background: $backgroundRosa;
+        padding: 0.2rem 0.5rem;
+        display: flex;
+        gap: 8px;
+    }
+
+    
+    .submenu {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding: 12px 0px;
+        height: 85px;
+        width: 120px;
+        opacity: 0;
+        visibility: hidden;
+
+        h6 {
+            border-bottom: 1px solid $charcoal;
+            border-left: 1px solid $charcoal;
+            border-radius: 4px;
+            padding: 5px 5px;
+        }
+    }
+
+    .dropdowns:hover {
+        transform: scale(1.1);
+    }
+
+    
+
+    .dropdown:hover .submenu {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: .3s
+    }
+    
     .titulo {
         @include ancho(700px);
         @include alto(40px);
@@ -361,15 +336,21 @@ body {
         @include alto(40px);
         border-radius: 30%;
         background-color: $backgroundRosa;
+        border: 1px solid $black
     }
 
+
+  /* No se que es 
     .grande {
         padding-top: 100px;
         @include ancho(100%);
         @include alto(400px);
         display: flex;
         justify-content: space-around;
-    }
+    } */
+
+
+
 
     .divButton {
         @include ancho(30%);
@@ -509,7 +490,30 @@ body {
 
 
 
+/* Boton con efecto */
 
+/* 
+Body {
+    background: #e8e8e8;
+}
+    
+button {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5
+                -6px -6px 12px #fff;
+}
+
+button:hover {
+    box-shadow: -6px -6px 12px #c5c5c5
+                6px 6px 12px #fff;
+}
+ */
 
 
 

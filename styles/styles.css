@@ -1,3 +1,16 @@
+/* Paleta de colores
+
+PALE GOLD
+#C0B283
+
+SILK 
+#DCD0C0
+
+PAPER
+#F4F4F4
+
+CHARCOAL
+#373737 */
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +18,10 @@
 }
 
 body {
-  background-color: rgba(243, 199, 199, 0.863);
+  background-color: #F4F4F4;
   font-family: "Josefin Sans", sans-serif;
   text-decoration: none;
-  color: black;
+  color: #c0b283;
 }
 
 #header {
@@ -39,47 +52,6 @@ body {
     line-height: 10px;
   }
 }
-.menu { /* REVISAR! */
-  position: absolute;
-  width: 100%;
-  height: 50vw;
-  background: rgba(243, 199, 199, 0.863);
-  top: 80px;
-  list-style: none;
-  left: -100%;
-  text-align: center;
-  transition: all 0.5s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border-bottom-right-radius: 30px;
-  border-bottom-left-radius: 30px;
-  border-radius: 40px;
-  border: 1px solid;
-  padding: 10px 0;
-  z-index: 20;
-}
-.menu a:hover ~ .submenu, .menu a:hover ~ .submenu2 {
-  display: block;
-}
-.menu a {
-  color: #000000;
-  text-decoration: none;
-}
-
-.submenu, .submenu2 { /* revisar */
-  list-style: none;
-  display: none;
-  position: absolute;
-  width: 100%;
-  height: 80px;
-  text-align: center;
-  align-content: center;
-  line-height: 2;
-  transform: translateY(-10px);
-  padding-top: 0.5rem;
-}
-
 .iconos {
   position: fixed;
   right: 0;
@@ -92,7 +64,8 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 30%;
-  background-color: rgba(243, 199, 199, 0.863);
+  background: #F4F4F4;
+  border: 1px solid #c0b283;
 }
 
 .titulo {
@@ -130,8 +103,8 @@ body {
 }
 
 .button {
-  color: #000000;
-  background-color: rgba(243, 199, 199, 0.863);
+  color: #c0b283;
+  background-color: #F4F4F4;
   font-size: 20px;
   border: 1px solid black;
 }
@@ -209,49 +182,65 @@ body {
   li {
     list-style: none;
   }
-  .navBar {
-    position: absolute;
-    top: 55px;
-    width: 800px;
-    display: flex;
-    justify-content: space-between;
+  .navbar {
+    width: 70%;
+    left: 15%;
+    color: #c0b283;
   }
   .menu {
-    color: black;
-    height: 200px;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background: none;
-    left: 0;
-    top: 0;
-    line-height: 1;
-    border: none;
-  }
-  .menu > li > a {
-    display: block;
-    padding: 15px 20px;
-  }
-  .submenu, .submenu2 {
-    position: absolute;
-    width: 150px;
-    display: none;
-    line-height: 1.7;
-    border-radius: 20px;
-    text-align: start;
-    padding-left: 20px;
-  }
-  .submenu a, .submenu2 a {
-    background-color: rgba(243, 199, 199, 0.911);
-    padding: 5px 8px;
-    border-radius: 10px;
-  }
-  .menu li a:hover .submenu, .menu li a:hover .submenu2 {
-    display: block;
-  }
-  a {
+    justify-content: space-around;
     text-decoration: none;
-    color: black;
+  }
+  .menu a {
+    text-decoration: none;
+    color: #c0b283;
+  }
+  .pages {
+    border-bottom: 1px solid #373737;
+    border-radius: 4px;
+    border-left: 1px solid #373737;
+    padding-left: 10px;
+  }
+  .pages:hover {
+    transform: scale(1.1);
+  }
+  .dropdowns {
+    border: none;
+    border-bottom: 1px solid #373737;
+    border-left: 1px solid #373737;
+    border-top: 0.1px solid #373737;
+    border-radius: 4px;
+    background: #F4F4F4;
+    padding: 0.2rem 0.5rem;
+    display: flex;
+    gap: 8px;
+  }
+  .submenu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 0px;
+    height: 85px;
+    width: 120px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .submenu h6 {
+    border-bottom: 1px solid #373737;
+    border-left: 1px solid #373737;
+    border-radius: 4px;
+    padding: 5px 5px;
+  }
+  .dropdowns:hover {
+    transform: scale(1.1);
+  }
+  .dropdown:hover .submenu {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s;
   }
   .titulo {
     width: 700px;
@@ -277,22 +266,24 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 30%;
-    background-color: rgba(243, 199, 199, 0.863);
+    background-color: #F4F4F4;
+    border: 1px solid #c0b283;
   }
-  .grande {
-    padding-top: 100px;
-    width: 100%;
-    height: 400px;
-    display: flex;
-    justify-content: space-around;
-  }
+  /* No se que es 
+    .grande {
+        padding-top: 100px;
+        @include ancho(100%);
+        @include alto(400px);
+        display: flex;
+        justify-content: space-around;
+    } */
   .divButton {
     width: 30%;
     padding: 100px 0;
   }
   .button {
     color: black;
-    background-color: rgba(243, 199, 199, 0.863);
+    background-color: #F4F4F4;
     font-size: 20px;
     border: 1px solid black;
   }
@@ -379,4 +370,27 @@ body {
     flex-direction: column;
     justify-content: space-around;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+/* Boton con efecto */
+/* 
+Body {
+    background: #e8e8e8;
+}
+
+button {
+    color: #090909;
+    padding: 0.7em 1.7em;
+    font-size: 18px;
+    border-radius: 0.5em;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .3s;
+    box-shadow: 6px 6px 12px #c5c5c5
+                -6px -6px 12px #fff;
+}
+
+button:hover {
+    box-shadow: -6px -6px 12px #c5c5c5
+                6px 6px 12px #fff;
+}
+ *//*# sourceMappingURL=styles.css.map */
